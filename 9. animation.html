@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <p>Animation Slide</p>
+    <button id="btn1">click to slideup and double click to slide down</button><br><br>
+    <button id="btn2">click to slide toggle me</button><br><br>
+    <button id="btn3">click to stop</button><br><br>
+    <button id="btn4">click to animation</button><br><br>
+    <div style="background-color: orangered; border: 1px solid black; height: 100px; width: 100px;"></div>
+
+    <script>
+        // To use your own shortcut for Jquery with the help of noconflict function
+        var j = $.noConflict();
+
+        // click to slideup and double click to slidedown
+        j("#btn1").click(function (){
+            j("div").slideUp(2000);
+        })
+        j("button").dblclick(function (){
+            j("div").slideDown(2000);
+        })
+
+
+        // click for slide toggle
+        j("#btn2").click(function (){
+            j("div").slideToggle(2000);
+        })
+
+        // click to stop any function
+        j("#btn3").click(function (){
+            j("div").stop();
+        })
+
+        // to animate anything like css properties
+        j("#btn4").click(function (){
+            j("div").animate({
+                height : '150px',
+                opacity : '0.5',
+                width : '200px',
+            },3000);
+        })
+    </script>
+</body>
+
+</html>
